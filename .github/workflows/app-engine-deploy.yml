@@ -10,8 +10,6 @@ on:
 
 env:
   PROJECT_ID: '${{ secrets.PROJECT_ID }}'
-  REGION: '${{ secrets.REGION }}'
-  SERVICE: '${{ secrets.SERVICE }}'
 
 jobs:
   deploy:
