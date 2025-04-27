@@ -29,19 +29,9 @@ jobs:
         uses: 'google-github-actions/auth@v2'
         with:
           credentials_json: '${{ secrets.GCP_SA_KEY }}'
-
-      # - name: 'Docker Auth'
-      #   run: |-
-      #     gcloud auth configure-docker "${{ env.REGION }}-docker.pkg.dev"
-
-      # - name: 'Build and Push Container'
-      #   run: |-
-      #     IMAGE="${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.GAR_NAME }}/${{ env.SERVICE }}:${{ github.sha }}"
-      #     docker build --tag "${IMAGE}" .
-      #     docker push "${IMAGE}"
           
       - name: 'Deploy to App Engine'
         run: |
-          gcloud app deploy --quite
+          gcloud app deploy --quiet
       
 
